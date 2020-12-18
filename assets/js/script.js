@@ -1,45 +1,9 @@
-require("bootstrap");
+require('bootstrap');
+const img1 = require("../img/food-table.jpg");
+const img2 = require("../img/grill.jpg");
 
-const img1 = require("../../assets/img/food-table.jpg");
-const img2 = require("../../assets/img/grill.jpg");
-
-// $(document).ready(function() {
-//   function createEl(htmlString, attrs, ...children) {
-//     if (typeof htmlString !== "string") {
-//       throw Error("Argument 'htmlString' is required and must be a string");
-//     }
-  
-//     const el = document.createElement(htmlString);
-  
-//     if (typeof attrs === "object") {
-//       for (let key in attrs) {
-//         if (key.substring(0, 2) === "on") {
-//           el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);
-//         } else {
-//           el.setAttribute(key, attrs[key]);
-//         }
-//       }
-//     }
-  
-//     children.forEach(function(child) {
-//       let node;
-  
-//       if (child.constructor.name.includes("Element")) {
-//         node = child;
-//       } else {
-//         node = document.createTextNode(child);
-//       }
-  
-//       el.appendChild(node);
-//     });
-  
-//     return el;
-//   };
-
-
+$(document).ready(function() {
   // First image is hard coded in index.html
-
-  //updating img property with the const 
   const carouselSlides = [
     {
       title: "We travel all over the US",
@@ -54,9 +18,9 @@ const img2 = require("../../assets/img/grill.jpg");
       img: img2,
       btnText: "Purchase Tickets",
       btnUrl: "tickets.html"
-    }
+    },
   ];
-
+  
   carouselSlides.forEach((slide, i) => {
     $('.carousel-inner').append(`
   <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
@@ -75,5 +39,6 @@ const img2 = require("../../assets/img/grill.jpg");
           </div>
         </div>
     </div>
-  </div>`)}
-  );
+  </div>`)
+  })
+});
